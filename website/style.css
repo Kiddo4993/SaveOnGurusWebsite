@@ -1,0 +1,139 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      background-color: white;
+      color: black;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    
+    nav {
+      background-color: #e5dec2;
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #d0c7a6;
+      font-weight: 700;
+    }
+
+    nav img.logo { height: 50px; cursor: pointer; transition: transform 0.3s ease; }
+    nav img.logo:hover { transform: scale(1.05); }
+
+    .nav-links { display: flex; gap: 1.6rem; font-size: 1.05rem; }
+    .nav-links a { text-decoration: none; color: rgb(47,47,47); }
+    .nav-links a:hover { color: rgb(250,211,167); }
+
+    .nav-icons { display: flex; align-items: center; gap: 1rem; font-size: 1.6rem; cursor: pointer; }
+
+    
+    .hero { background-color: #ffffff; padding: 3.5rem 1rem; }
+    .hero-content { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:2rem; max-width:1200px; margin:0 auto; }
+    .hero-text { flex:1; min-width:260px; }
+    .hero-text h1 { font-family:'Comic Neue', cursive; font-size:2.6rem; margin-bottom:.8rem; font-weight:700; }
+    .hero-text p { font-size:1.05rem; margin-bottom:1.2rem; font-weight:600; }
+    .hero-buttons button { border:none; padding:.7rem 1.4rem; border-radius:2rem; font-weight:700; cursor:pointer; margin-right:.5rem; transition:all .25s; }
+    .hero-buttons button:first-child { background: linear-gradient(135deg,#c6b999,#b7a67c); color:white; box-shadow:0 4px 8px rgba(0,0,0,0.12); }
+    .hero-buttons button:last-child { background:#d8cfb5; color:black; box-shadow:0 4px 8px rgba(0,0,0,0.12); }
+    .hero img { width: 380px; border-radius: 1rem; flex:1; min-width:260px; box-shadow:0 6px 12px rgba(0,0,0,0.12); }
+
+
+    section { padding: 3.2rem 1rem; font-weight:700; }
+    section h2 { font-family:'Comic Neue', cursive; font-size:1.9rem; margin-bottom:1.2rem; text-align:center; }
+
+    .new-arrivals { background-color:#f4ebd7; }
+    .new-badge { display:inline-block; background:#e94d3f; color:white; padding:.4rem .8rem; border-radius:50%; font-weight:bold; transform:rotate(-15deg); margin:0 auto 1rem; display:block; width:fit-content; }
+
+    .items { display:flex; justify-content:center; flex-wrap:wrap; gap:1.6rem; max-width:1100px; margin:0 auto; }
+    .item { background:white; padding:1.2rem; border-radius:1rem; width: 260px; box-shadow:0 4px 8px rgba(0,0,0,0.12); text-align:center; transition:transform .18s, box-shadow .18s; }
+    .item:hover { transform:translateY(-6px); box-shadow:0 8px 18px rgba(0,0,0,0.16); }
+    .item img { width:150px; border-radius:.8rem; margin-bottom:.8rem; }
+    .item h3 { font-size:1.05rem; margin: .4rem 0; }
+    .item p { margin:.35rem 0; font-weight:600; color:#333; }
+    .item button { background: linear-gradient(135deg,#a88f5f,#cbb67d); color:white; border:none; padding:.7rem 1.6rem; border-radius:2rem; font-weight:bold; cursor:pointer; margin-top:0.8rem; box-shadow:0 5px 10px rgba(0,0,0,0.14); transition: transform .15s; }
+    .item button:hover { transform:translateY(-3px); }
+
+    .discount { background-color:#fffdf8; text-align:center; }
+    .discount-item { background:#f4ebd7; padding:1.8rem; border-radius:1rem; width:320px; margin:1.4rem auto; box-shadow:0 6px 12px rgba(0,0,0,0.12); font-weight:700; }
+
+    .see-more { background:#e0d6b7; border:none; padding:.7rem 1.6rem; border-radius:2rem; font-weight:700; cursor:pointer; display:block; margin:1.6rem auto 0; }
+
+    .scroll-to-top { position:fixed; bottom:25px; right:25px; width:55px; height:55px; background-color:rgb(193,188,188); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:24px; cursor:pointer; box-shadow:0 4px 8px rgba(0,0,0,0.2); }
+    .scroll-to-top:hover { background-color:rgb(47,47,47); color:white; }
+
+    footer { background-color:#e5dec2; color:black; text-align:center; padding:2rem 1rem; margin-top:2rem; border-top:2px solid #d0c7a6; font-weight:700; }
+
+    
+    .cart-slide {
+      position: fixed;
+      top: 0;
+      right: -440px;
+      width: 420px;
+      height: 100%;
+      background: #fffdf8; 
+      box-shadow: -8px 0 30px rgba(0,0,0,0.18);
+      transition: right .36s cubic-bezier(.22,.9,.32,1);
+      z-index: 1100;
+      padding: 1.4rem;
+      overflow-y: auto;
+    }
+    .cart-slide.active { right: 0; }
+    .cart-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; }
+    .close-cart { font-size:1.6rem; cursor:pointer; padding:.2rem .5rem; border-radius:.35rem; }
+    .cart-item { display:flex; gap:.9rem; align-items:center; padding:.7rem 0; border-bottom:1px solid rgba(0,0,0,0.06); }
+    .cart-item img { width:72px; height:72px; object-fit:cover; border-radius:8px; }
+    .cart-item h4 { margin:0; font-size:1rem; }
+    .cart-item p { margin: .25rem 0; color:#444; font-weight:600; }
+    .cart-qty { display:flex; gap:.4rem; align-items:center; margin-top:.4rem; }
+    .qty-btn { border:none; background:#dcd0b1; padding:.25rem .5rem; border-radius:.3rem; cursor:pointer; font-weight:700; }
+    .checkout-btn { width:100%; padding:.9rem; background:#111; color:#fff; border:none; border-radius:40px; font-weight:800; margin-top:1rem; cursor:pointer; }
+    .checkout-btn:hover{ background:#333; }
+
+   
+    .drawer-overlay { position: fixed; inset:0; background: rgba(0,0,0,0.35); opacity:0; pointer-events:none; transition: opacity .2s; z-index:1050; }
+    .drawer-overlay.active { opacity:1; pointer-events:auto; }
+
+   
+    @media (max-width:640px) {
+      .cart-slide { width: 100%; right: -100%; }
+      .cart-slide.active { right: 0; }
+      .hero img { width: 100%; max-width: 420px; }
+      .items { gap:1rem; }
+    }
+    
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    body{ font-family: 'Poppins', sans-serif; background:#fafafa; color:#111; line-height:1.4; }
+    nav{ background:#e5dec2; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #d0c7a6; }
+    nav strong{ font-weight:800; }
+    .container{ max-width:1200px; margin:2.5rem auto; display:flex; gap:2rem; padding:0 1rem; }
+    .left{ flex:2; background:#fff; border-radius:12px; padding:1.6rem; box-shadow:0 8px 24px rgba(0,0,0,0.06); }
+    .right{ flex:1; background:#fff; border-radius:12px; padding:1.6rem; box-shadow:0 8px 24px rgba(0,0,0,0.06); height:fit-content; }
+
+    h1{ font-family:'Comic Neue', cursive; font-size:1.7rem; margin-bottom:1rem; font-weight:700; }
+    .item{ display:flex; gap:1rem; padding:1rem 0; border-bottom:1px solid #eee; align-items:center; }
+    .item img{ width:140px; height:140px; object-fit:cover; border-radius:10px; }
+    .item-info h3{ margin:0 0 .4rem 0; font-size:1.05rem; }
+    .item-info p{ margin:.25rem 0; color:#666; font-weight:600; }
+    .item-controls{ display:flex; gap:.6rem; align-items:center; margin-top:.6rem; }
+    .qty-btn{ padding:.3rem .6rem; border-radius:.35rem; border:none; background:#e9e3ce; cursor:pointer; font-weight:800; }
+
+    .summary-line{ display:flex; justify-content:space-between; margin:.6rem 0; font-weight:700; }
+    hr{ border:none; border-top:1px solid #eee; margin:.8rem 0; }
+
+    .checkout-btn{ width:100%; padding:.9rem; background:#111; color:#fff; border:none; border-radius:40px; font-weight:800; margin-top:1rem; cursor:pointer; }
+    .order-more{ width:100%; padding:.85rem; border-radius:40px; border:2px solid #111; background:transparent; margin-top:.6rem; font-weight:800; cursor:pointer; }
+
+    /* recommended */
+    .recommend{ max-width:1200px; margin:2.5rem auto; padding:0 1rem; }
+    .recommend h2{ font-family:'Comic Neue', cursive; font-size:1.4rem; margin-bottom:1rem; text-align:center; }
+    .recommend-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:1rem; }
+
+    .rec-item{ background:#fff; padding:1rem; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.06); text-align:center; }
+    .rec-item img{ width:100%; height:170px; object-fit:cover; border-radius:8px; }
+
+    @media (max-width:900px){
+      .container{ flex-direction:column; padding:1rem; }
+      .item img{ width:120px; height:120px; }
+    }
