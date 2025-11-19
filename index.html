@@ -142,7 +142,7 @@
       .items { gap:1rem; }
     }
 
-    /* Search box */
+    
     .search-box {
       display: flex;
       align-items: center;
@@ -161,7 +161,7 @@
     }
     .search-box span { cursor: pointer; font-size: 1.1rem; }
 
-    /* Account dropdown */
+   
     .account-dropdown { position: relative; }
     .account-menu {
       display: none;
@@ -189,9 +189,9 @@
 
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="#">Discounts</a>
-      <a href="#">New Arrival</a>
-      <a href="#">Popular</a>
+      <a href="Discounts.html">Discounts</a>
+      <a href="NewArrival.html">New Arrival</a>
+      <a href="Popular.html">Popular</a>
     </div>
 
     <div class="nav-icons">
@@ -205,7 +205,7 @@
       <div class="account-dropdown">
         <span id="accountIcon" title="Account">👤</span>
         <div class="account-menu" id="accountMenu">
-          <!-- JS will inject login/signup or user info/logout -->
+          
         </div>
       </div>
 
@@ -213,7 +213,7 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+ 
   <section class="hero">
     <div class="hero-content">
       <div class="hero-text">
@@ -228,7 +228,7 @@
     </div>
   </section>
 
-  <!-- NEW ARRIVALS -->
+ 
   <section class="new-arrivals">
     <div class="new-badge">NEW</div>
     <h2>NEW ARRIVALS!</h2>
@@ -294,7 +294,7 @@
     </div>
   </footer>
 
-  <!-- CART SLIDE OUT + OVERLAY -->
+
   <div class="drawer-overlay" id="drawerOverlay"></div>
 
   <aside class="cart-slide" id="cartSlide" aria-hidden="true">
@@ -314,7 +314,7 @@
   </aside>
 
   <script>
-    /* --- helper and cart code (unchanged) --- */
+  
     function fmt(v){ return '$' + Number(v).toFixed(2); }
     const CART_KEY = 'cartItems';
     function getCart(){ return JSON.parse(localStorage.getItem(CART_KEY) || '[]'); }
@@ -344,7 +344,7 @@
     }
     function calcSubtotal(){ return getCart().reduce((s,i)=> s + (Number(i.price) * Number(i.quantity)), 0); }
 
-    /* --- drawer render --- */
+  
     const cartSlide = document.getElementById('cartSlide');
     const overlay = document.getElementById('drawerOverlay');
     const openCartBtn = document.getElementById('openCartBtn');
@@ -428,7 +428,6 @@
 
     renderDrawer();
 
-    /* --- Search functionality --- */
     (function setupSearch(){
       const searchInput = document.getElementById('searchInput');
       if(!searchInput) return;
@@ -442,7 +441,7 @@
       });
     })();
 
-    /* --- Account / dropdown logic --- */
+
     (function setupAccount(){
       const accountIcon = document.getElementById('accountIcon');
       const accountMenu = document.getElementById('accountMenu');
@@ -457,7 +456,7 @@
             <button id="profileBtn">My Profile</button>
             <button id="logoutBtn">Logout</button>
           `;
-          // profile button (optional)
+          
           const profileBtn = document.getElementById('profileBtn');
           if(profileBtn) profileBtn.addEventListener('click', ()=> window.location.href = 'profile.html');
 
@@ -477,13 +476,13 @@
         }
       }
 
-      // open/close dropdown
+ 
       accountIcon.addEventListener('click', (e)=>{
         e.stopPropagation();
         accountMenu.classList.toggle('show');
       });
 
-      // close when click outside
+
       document.addEventListener('click', (e)=>{
         if(!e.target.closest('.account-dropdown')){
           accountMenu.classList.remove('show');
