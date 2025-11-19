@@ -220,7 +220,7 @@
 
   <main class="container">
     <section class="left">
-      <h1>🛍️ Complete Your Order</h1>
+      <h1> Complete Your Order</h1>
       <div id="cartList"></div>
       <div style="margin-top:1rem; display:flex; gap:1rem; align-items:center;">
         <button class="order-more" onclick="location.href='index.html'">Continue Shopping</button>
@@ -260,7 +260,7 @@
     © 2025 Save On Gurus — Vancouver
   </footer>
 
-  <div class="toast" id="toast">✅ Added to Cart!</div>
+  <div class="toast" id="toast">Added to Cart!</div>
 
   <script>
     const CART_KEY = 'cartItems';
@@ -333,7 +333,7 @@
       renderCartPage();
     });
 
-    // recommended add to cart
+
     document.querySelectorAll('.add-btn').forEach(btn => {
       btn.addEventListener('click', (e)=>{
         const card = e.target.closest('.rec-item');
@@ -349,7 +349,7 @@
 
         saveCart(cart);
         renderCartPage();
-        showToast(`✅ ${name} added to cart`);
+        showToast(` ${name} added to cart`);
       });
     });
 

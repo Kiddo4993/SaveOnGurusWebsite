@@ -5,64 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Save on Gurus</title>
 
-  <style>
-    header{
-        background-color: rgb(47, 47, 47);
-        color: white;
-        text-align: center;
-        padding: 1rem;
-        font-size: 1.5rem;
-    }
-    nav{
-        background-color: rgb(244, 235, 183);
-        padding: 3rem;
-        text-align: center;
-    }
-    .nav_container{
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        font-size: 1.2rem;
-        font-weight: bold;
-    }
-    * { box-sizing: border-box; }
-    .nav_container a {
-        text-decoration: none;
-        color: rgb(47, 47, 47);
-        transition: color 0.3s;
-    }
-    .nav_container a:hover {
-        color: rgb(250, 211, 167);
-    }
-
-
-    body {
-        margin: 0;
-        height: 200vh; 
-    }
-
-    .scroll-to-top {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 60px;
-        height: 60px;
-        background-color: rgb(193, 188, 188);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 24px;
-        cursor: pointer;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        transition: background-color 0.3s;
-    }
-
-    .scroll-to-top:hover {
-        background-color: rgb(47, 47, 47);
-    }
-    </style>
+  <link rel="stylesheet" href="style.css">
 </head>
     
     
@@ -78,9 +21,5 @@
         </div>
     </nav>
 
-        <script>
-            function scrollToTop() {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        </script>
+        <script src="script.js"></script>
     </body>

@@ -83,10 +83,10 @@
       if (!email || !pass) return alert('Please fill out all fields.');
       if (stored.email === email && stored.password === pass) {
         localStorage.setItem('loggedIn', 'true');
-        alert('✅ Login successful!');
+        alert(' Login successful!');
         window.location.href = 'index.html';
       } else {
-        alert('❌ Incorrect email or password.');
+        alert(' Incorrect email or password.');
       }
     });
   </script>
