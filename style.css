@@ -31,8 +31,7 @@
 
     body {
         margin: 0;
-        height: 200vh; 
-    }
+}
 
     .scroll-to-top {
         position: fixed;

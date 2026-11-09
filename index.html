@@ -32,7 +32,7 @@
     .profile-email { font-weight:600; color:#5a4b2f; }
 
     .logout-btn {
-      background: linear-gradient(135deg,#c6b999,#b7a67c);
+      background: linear-gradient(135deg,#8a7240,#6f5a2e);
       border: none; color:#fff; border-radius:25px; padding:6px 15px; font-weight:600; cursor:pointer;
     }
     .logout-btn:hover { opacity:.9; transform:scale(1.05); }
@@ -40,8 +40,8 @@
     .login-btn, .signup-btn {
       border: 1.5px solid #c6b999; border-radius:25px; padding:6px 15px; font-weight:600; text-decoration:none;
     }
-    .login-btn { background:#fff; color:#9f8b58; }
-    .signup-btn { background: linear-gradient(135deg,#c6b999,#b7a67c); color:#fff; border:none; }
+    .login-btn { background:#fff; color:#7a6334; }
+    .signup-btn { background: linear-gradient(135deg,#8a7240,#6f5a2e); color:#fff; border:none; }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -68,7 +68,7 @@
 
     .nav-links { display: flex; gap: 1.6rem; font-size: 1.05rem; }
     .nav-links a { text-decoration: none; color: rgb(47,47,47); }
-    .nav-links a:hover { color: rgb(250,211,167); }
+    .nav-links a:hover { color:#7a6334; text-decoration:underline; text-underline-offset:4px; }
 
     .nav-icons { display: flex; align-items: center; gap: 1rem; font-size: 1.6rem; cursor: pointer; }
 
@@ -78,7 +78,7 @@
     .hero-text h1 { font-family:'Comic Neue', cursive; font-size:2.6rem; margin-bottom:.8rem; font-weight:700; }
     .hero-text p { font-size:1.05rem; margin-bottom:1.2rem; font-weight:600; }
     .hero-buttons button { border:none; padding:.7rem 1.4rem; border-radius:2rem; font-weight:700; cursor:pointer; margin-right:.5rem; transition:all .25s; }
-    .hero-buttons button:first-child { background: linear-gradient(135deg,#c6b999,#b7a67c); color:white; box-shadow:0 4px 8px rgba(0,0,0,0.12); }
+    .hero-buttons button:first-child { background: linear-gradient(135deg,#8a7240,#6f5a2e); color:white; box-shadow:0 4px 8px rgba(0,0,0,0.12); }
     .hero-buttons button:last-child { background:#d8cfb5; color:black; box-shadow:0 4px 8px rgba(0,0,0,0.12); }
     .hero img { width: 380px; border-radius: 1rem; flex:1; min-width:260px; box-shadow:0 6px 12px rgba(0,0,0,0.12); }
 
@@ -94,7 +94,7 @@
     .item img { width:150px; border-radius:.8rem; margin-bottom:.8rem; }
     .item h3 { font-size:1.05rem; margin: .4rem 0; }
     .item p { margin:.35rem 0; font-weight:600; color:#333; }
-    .item button { background: linear-gradient(135deg,#a88f5f,#cbb67d); color:white; border:none; padding:.7rem 1.6rem; border-radius:2rem; font-weight:bold; cursor:pointer; margin-top:0.8rem; box-shadow:0 5px 10px rgba(0,0,0,0.14); transition: transform .15s; }
+    .item button { background: linear-gradient(135deg,#8a7240,#6f5a2e); color:white; border:none; padding:.7rem 1.6rem; border-radius:2rem; font-weight:bold; cursor:pointer; margin-top:0.8rem; box-shadow:0 5px 10px rgba(0,0,0,0.14); transition: transform .15s; }
     .item button:hover { transform:translateY(-3px); }
 
     .discount { background-color:#fffdf8; text-align:center; }
@@ -135,7 +135,17 @@
     .drawer-overlay { position: fixed; inset:0; background: rgba(0,0,0,0.35); opacity:0; pointer-events:none; transition: opacity .2s; z-index:1050; }
     .drawer-overlay.active { opacity:1; pointer-events:auto; }
 
+    .icon-btn { background:none; border:none; padding:0; font:inherit; line-height:1; cursor:pointer; }
+    a:focus-visible, button:focus-visible, input:focus-visible { outline:2px solid #6f5a2e; outline-offset:3px; border-radius:6px; }
+
     @media (max-width:640px) {
+      nav { flex-wrap:wrap; gap:.6rem 1rem; padding:.8rem 1rem; }
+      nav img.logo { height:42px; }
+      .nav-links { order:3; width:100%; justify-content:space-between; gap:.5rem; font-size:.95rem; }
+      .nav-links a { padding:.5rem 0; white-space:nowrap; }
+      .nav-icons { flex:1; min-width:0; justify-content:flex-end; gap:.7rem; font-size:1.35rem; }
+      .search-box { flex:1 1 auto; min-width:0; max-width:220px; }
+      .search-box input { width:100%; min-width:0; }
       .cart-slide { width: 100%; right: -100%; }
       .cart-slide.active { right: 0; }
       .hero img { width: 100%; max-width: 420px; }
@@ -196,14 +206,14 @@
 
     <div class="nav-icons">
       <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Search products...">
+        <input type="search" id="searchInput" placeholder="Search" aria-label="Search products">
         <span>🔍</span>
       </div>
 
-      <span id="openCartBtn" title="Open cart">🛒</span>
+      <button class="icon-btn" id="openCartBtn" title="Open cart" aria-label="Open cart">🛒</button>
 
       <div class="account-dropdown">
-        <span id="accountIcon" title="Account">👤</span>
+        <button class="icon-btn" id="accountIcon" title="Account" aria-label="Account">👤</button>
         <div class="account-menu" id="accountMenu">
           
         </div>
@@ -220,7 +230,7 @@
         <h1>SAVE ON GURUS</h1>
         <p>Save money on random items in your daily life. There may be discounts.</p>
         <div class="hero-buttons">
-          <button onclick="document.querySelector('.new-arrivals').scrollIntoView({behavior:'smooth'})">Discounted</button>
+          <button onclick="document.querySelector('.discount').scrollIntoView({behavior:'smooth'})">Discounted</button>
           <button onclick="document.querySelector('.new-arrivals').scrollIntoView({behavior:'smooth'})">New Arrivals!</button>
         </div>
       </div>
